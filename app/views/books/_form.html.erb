@@ -8,12 +8,10 @@
 <% end %>
 
 <%= form_with model: book, local: true do |f| %>
-  <!--<label for="title">Title</label>-->
-  <%= f.label :title %>
+  <%= f.label :Title %>
   <%= f.text_field :title, class: 'form-control' %>
 
-  <!--<label for="opinion">Opinion</label>-->
-  <%= f.label :opinion %>
+  <%= f.label :Opinion %>
   <%= f.text_area :body, class: 'form-control' %><br>
 
   <%= f.submit 'Create Book', class: 'btn btn-success' %>

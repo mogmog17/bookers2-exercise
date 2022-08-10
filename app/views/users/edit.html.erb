@@ -13,13 +13,13 @@
       <% end %>
 
       <%= form_with model: @user do |f| %>
-        <label for="user_name">Name</label><br>
+        <%= f.label :Name %><br>
         <%= f.text_field :name, class: 'form-control' %><br>
 
-        <label for="user_image">Image</label><br>
+        <%= f.label :Image %><br>
         <%= f.file_field :profile_image, accept: "image/*" %><br>
 
-        <label for="introduction">Introduction</label>
+        <%= f.label :Introduction %>
         <%= f.text_area :introduction, class: 'form-control' %><br>
 
         <%= f.submit 'Update User', class: 'btn btn-secondary' %>

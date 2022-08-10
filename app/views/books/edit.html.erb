@@ -13,10 +13,10 @@
       <% end %>
 
       <%= form_with model: @book do |f| %>
-        <label for="book_title">Title</label>
+        <%= f.label :Title %>
         <%= f.text_field :title, class: 'form-control' %><br>
 
-        <label for="book_opinion">Opinion</label>
+        <%= f.label :Opinion %>
         <%= f.text_area :body, class: 'form-control' %><br>
 
         <%= f.submit 'Update Book', class: 'btn btn-success' %>
