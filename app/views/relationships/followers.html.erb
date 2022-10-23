@@ -1,1 +1,19 @@
-<%= render "follow_list", users: @users %>
+<% if @users.present? %>
+<div class="container">
+  <div class="row">
+    <h2 class="mt-4 mb-4">
+      <i class="fas fa-user-friends"></i>
+      フォロワー一覧
+    </h2>
+    <%= render "follow_list", users: @users %>
+  </div>
+</div>
+<% else %>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h4 class="text-center mt-5">フォローされたユーザーはいません</h4>
+      </div>
+    </div>
+  </div>
+<% end %>

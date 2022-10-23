@@ -1,22 +1,32 @@
-<% if users.exists? %>
-  <% users.each do |user| %>
-    <table>
+<div class="container">
+  <div class="row">
+    <table class="table table-hover table-inverse d-none d-xl-table">
       <thead>
-        <tr>
-          <th>name</th>
-          <th></th>
-          <th></th>
+        <tr class="table-warning">
+          <th>プロフィール画像</th>
+          <th>ユーザーネーム</th>
+          <th>フォロー数</th>
+          <th>フォロワー数</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><%= user.name %></td>
-          <td>フォロー数: <%= user.followings.count %></td>
-          <td>フォロワー数: <%= user.followers.count %></td>
-        </tr>
+        <% users.each do |user| %>
+          <tr>
+            <td>
+              <%= link_to(user) do %>
+                <%= image_tag user.get_profile_image(50, 50), class: "rounded-circle" %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to(user) do %>
+                <h5><%= user.name %></h5>
+              <% end %>
+            </td>
+            <td><%= user.followings.count %></td>
+            <td><%= user.followers.count %></td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
-  <% end %>
-<% else %>
-  <p>ユーザーはいません</p>
-<% end %>
+  </div>
+</div>
